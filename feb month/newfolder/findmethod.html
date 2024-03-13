@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <!-- find menthod -->
+      <script>
+          var arr = [12,33,43,26,98,13,67]
+          arr.find(function(a,i){
+              console.log("hi");  
+          })
+          //manaki o/p lo 7 times hi vastadi
+ 
+
+
+          var arr = [12,33,43,26,98,13,67]
+          arr.find(function(a,i){
+              console.log("hi", a, i);   // a is the arr lo unde number , i is the index
+              return true 
+          })
+    
+          //return lo true este only one time aa output vastadi
+
+          var arr = [12,33,43,26,98,13,67]
+          arr.find(function(a,i){
+              console.log("hi", a,i); 
+              return false
+          })
+        //return lo false este only 7 time aa output vastadi
+
+    // if i want to find the even number in the given array
+            var arr = [14,33,43,26,98,13,67]
+            var res = arr.find((a,i)=>{
+                 if(a%2 ===0){
+                    return true
+                 }else{
+                    return false
+                 }
+            })
+         console.log("he",res);
+         
+         //op lo manaki 12 okate vastadi,becuase find method return true avagane oka value aa
+         //tisukuntadi , more than 1 number ni store chesukodu
+
+
+         //forexample mana echina number given array lo undo ledo teliyali ante or
+         //edian item search chesta unam aa time unda leda ani telsukovali ante
+
+         var arr = [12,33,43,26,98,13,67]
+         var k = +prompt()
+         var res = arr.find((a,i)=>{
+                if(k === a){
+                    return true
+                }else{
+                    return false
+                }
+         })
+    
+       console.log("respose value is:",res);
+
+
+   // find method lo unte return avudi lekapothey undefind vastadi
+
+      </script>
+</body>
+</html>

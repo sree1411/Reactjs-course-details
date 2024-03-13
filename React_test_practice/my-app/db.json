@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "title": "sreekanthsss",
+      "author": "book1sssss",
+      "id": 2
+    },
+    {
+      "title": "renati",
+      "author": "book2",
+      "id": 3
+    },
+    {
+      "title": "virat kohli",
+      "author": "book3",
+      "id": 4
+    },
+    {
+      "title": "kanth",
+      "author": "sree",
+      "id": 5
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

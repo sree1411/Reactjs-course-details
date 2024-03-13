@@ -1,0 +1,39 @@
+.bluebackground1{
+    width:100%;
+    height:70px;
+    background-color:#2b73b0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top:150px;
+    left:0px;
+    z-index:-1;
+}
+
+.purplebackground1{
+    width:100%;
+    height:70px;
+    background-color:#542d87;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top:150px;
+    left:0px;
+    z-index:-1;
+}
+@media(max-width:415px){
+    .bluebackground1.bg-sub{
+        height: 0px;
+    }
+    .bluebackground{
+        background-image:url("/assets/blue-mobile-reduced.png");
+        top: 69px;
+    }
+    .purplebackground1{
+        height: 0px;
+    }
+    .purplebackground{
+        background-image:url("/assets/purple-mobile-reduced.png");
+        top: 69px;
+    }
+}

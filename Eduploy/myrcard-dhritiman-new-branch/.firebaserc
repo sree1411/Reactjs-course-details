@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "credo-card",
+    "credo-card": "credo-card"
+  },
+  "targets": {}
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+    <body>
+        <div id="d3"></div>
+        <script type="text/babel">
+            var StudentsList = () => {
+                var [selectedName, setSelectedName] = React.useState("");
+                var [selectedIndex, setSelectedIndex] = React.useState(null);
+
+                var students = [
+                    {
+                        firstname: "Praveen",
+                        lastname: "Gubbala",
+                        age: 40,
+                        gender: "male",
+                    },
+                    {
+                        firstname: "Smrithi",
+                        lastname: "mandana",
+                        age: 25,
+                        gender: "female",
+                    },
+                    {
+                        firstname: "mithali",
+                        lastname: "raj",
+                        age: 39,
+                        gender: "female",
+                    },
+                    {
+                        firstname: "Rohit",
+                        lastname: "Sharma",
+                        age: 35,
+                        gender: "male",
+                    },
+                    {
+                        firstname: "Sachin",
+                        lastname: "Tendulkar",
+                        age: 50,
+                        gender: "male",
+                    },
+                ];
+
+                var handleClick = (index, firstname) => {
+                    setSelectedIndex(index);
+                    setSelectedName(firstname);
+                };
+
+                return (
+                    <div>
+                        <ul>
+                            {students.map((student, index) => (
+                                <li key={index} onClick={() => handleClick(index, student.firstname)}>
+                                    {student.firstname}
+                                </li>
+                            ))}
+                        </ul>
+                        <h1>{selectedName}</h1>
+                        <h2>{selectedIndex}</h2>
+                    </div>
+                );
+            };
+
+            ReactDOM.render(<StudentsList />, document.getElementById('d3'));
+        </script>
+    </body>
+
+</html>

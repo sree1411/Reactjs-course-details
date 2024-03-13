@@ -1,0 +1,30 @@
+{
+  "matches": [],
+  "teams": [],
+  "players": [
+    {
+      "id": "deec",
+      "firstname": "sree",
+      "dob": "2008-01-11",
+      "battingStyle": "left",
+      "bowlingStyle": "right"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <script>
+         // sort method
+            var arr = [10,25,72,174,64,97,37]
+            var res = arr.sort((a,b)=>{
+                 
+                if(a>b){
+                    return +1
+                }else{
+                    return -1
+                }
+
+            })
+            console.log('assending and decending order',res);
+            // just change the +1 and -1 i will change to asc to desc
+
+            // we have arr of obj and we need to print the by age from smallest to largest and
+            // we need to print by name by assending order along with the place
+           var people  =[
+            {  name :"sreekanth",
+               age :22,
+               place: "hyderbad"
+            },
+            {  name :"virat kohli",
+               age :25,
+               place: "tirupati"
+            },
+            {  name :"dhoni",
+               age :18,
+               place: "chennai"
+            },
+            {  name :"sehwah",
+               age :29,
+               place: "delhi"
+            },
+            {  name :"sachin",
+               age :45,
+               place: "mumbai"
+            },
+        ]
+    
+        const res1 = people.sort((a,b)=>{
+            if(a.age >b.age){
+                return +1
+            }else{
+                return -1
+            }
+        })
+     
+      console.log(res1)  //o/p == age wise vastadi
+
+      const res2 = people.sort((a,b)=>{
+         let fn1 = a.name.toLowerCase()
+         let fn2 = a.name.toLowerCase()
+            if(fn1 >fn2){
+                return -1
+            }else{
+                return +1
+            }
+        })
+    console.log(res2) // name wise vastadi  first dhoni vastadi aniti kante d staring letter kabati
+       </script>
+</body>
+</html>

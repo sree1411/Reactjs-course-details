@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ol id="dd"></ol>
+    <div id="d5">
+
+    </div>
+    <div id="d6">
+
+    </div>
+    <button id="btnPrev"> Prev </button>
+    <button id="btnNext"> Next </button>
+    <script>
+      var cricketImages = [
+        "https://wallpapers.com/images/high/indian-cricket-blue-theme-poster-3ibwilalny969mj8.webp",
+
+        "https://wallpapers.com/images/high/indian-cricket-team-in-rooftop-y203qnw2wdbubsxj.webp",
+        "https://wallpapers.com/images/high/indian-cricket-blue-theme-poster-i1dvftb0zgxgnwmm.webp",
+      ];
+  
+       cricketImages.forEach((ele)=>{
+          let olList = document.querySelector('#dd')
+          let newLi = document.createElement('img')
+          newLi.src = ele
+          newLi.style.width="100px"
+          newLi.style.height ="100px"
+          olList.appendChild(newLi)
+       })
+
+     var i = 0
+     var myimg = document.createElement('img')
+     myimg.src = cricketImages[i]
+     myimg.style.width='200px'
+     myimg.style.height='200px'
+     document.getElementById('d5').appendChild(myimg)
+
+      
+     document.getElementById('btnPrev').addEventListener('click', showPrev);
+    document.getElementById('btnNext').addEventListener('click', showNext);
+
+      function showPrev() {
+          i = (i - 1 + cricketImages.length) % cricketImages.length;
+          myimg.src = cricketImages[i];
+      }
+
+      function showNext() {
+          i = (i + 1) % cricketImages.length;
+          myimg.src = cricketImages[i];
+      }
+
+    </script>
+  </body>
+</html>

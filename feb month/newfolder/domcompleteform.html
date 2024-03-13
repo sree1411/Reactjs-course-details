@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        thead {
+            border: 1px solid red;
+        }
+    </style>
+  </head>
+  <body>
+    <form onsubmit="event.preventDefault()" name="userForm">
+      <label for="">first name </label>
+      <input type="text" name="fn" /> <br />
+      <br />
+      <label for="">Last name </label>
+      <input type="text" name="ln" /> <br />
+      <br />
+      <label for=""> Dom </label>
+      <input type="date" name="dob" /> <br />
+      <br />
+      <label for=""> Gender </label>
+      <input
+        style="cursor: pointer"
+        type="radio"
+        name="gender"
+        value="male"
+      />Male <input type="radio" name="gender" value="female" /> female
+      <input type="radio" name="gender" value="other" /> others <br />
+      <br />
+      <label for="">Choose a courser:</label>
+      <select name="course">
+        <option value="reactjs">React js</option>
+        <option value="angular">Angular</option>
+      </select>
+      <br />
+      <br />
+      <label for=" ">Address Details:</label>
+      <textarea name="address" rows="4" cols="50"> </textarea><br />
+      <br />
+      <button onclick="printDetails()">Print Details</button>
+    </form>
+    <div id="d1"></div>
+
+    <script>
+      let userForm = document.userForm;
+
+      let peoples = [];
+
+      function printDetails() {
+        const person = {
+          firstname: "",
+          lastname: "",
+          dob: "",
+          gender: "",
+          course: "",
+          address: "",
+        };
+
+        person.firstname = userForm.fn.value;
+        person.lastname = userForm.ln.value;
+        person.dob = userForm.dob.value;
+        person.gender = userForm.gender.value;
+        person.course = userForm.course.value;
+        person.address = userForm.address.value;
+        peoples.push(person);
+        userForm.reset();
+        createTable(person);
+        console.log(peoples);
+      }
+
+      function createTable(array) {
+        let maindiv = document.getElementById("d1");
+        maindiv.innerHTML =""
+        let thead = document.createElement("thead");
+        thead.style.border= "1px solid red"
+        let trow = document.createElement("tr");
+        let th1 = document.createElement("th");
+        th1.innerHTML = "firstname";
+        let th2 = document.createElement("th");
+        th2.innerHTML = "lastname";
+        let th3 = document.createElement("th");
+        th3.innerHTML = "dob";
+        let th4 = document.createElement("th");
+        th4.innerHTML = "gender";
+        let th5 = document.createElement("th");
+        th5.innerHTML = "course";
+        let th6 = document.createElement("th");
+        th6.innerHTML = "address";
+
+        trow.appendChild(th1);
+        trow.appendChild(th2);
+        trow.appendChild(th3);
+        trow.appendChild(th4);
+        trow.appendChild(th5);
+        trow.appendChild(th6);
+        thead.append(trow);
+        maindiv.appendChild(thead);
+
+        let tbody = document.createElement("tbody");
+        peoples.forEach((people) => {
+          let trow = document.createElement("tr");
+          let th1 = document.createElement("td");
+          th1.innerHTML = people.firstname;
+          let th2 = document.createElement("td");
+          th2.innerHTML = people.lastname;
+          let th3 = document.createElement("td");
+          th3.innerHTML = people.dob;
+          let th4 = document.createElement("td");
+          th4.innerHTML = people.gender;
+          let th5 = document.createElement("td");
+          th5.innerHTML = people.course;
+
+          let th6 = document.createElement("td");
+          th6.innerHTML = people.address;
+
+          trow.appendChild(th1);
+          trow.appendChild(th2);
+          trow.appendChild(th3);
+          trow.appendChild(th4);
+          trow.appendChild(th5);
+          trow.appendChild(th6);
+          tbody.append(trow);
+          maindiv.appendChild(tbody);
+        });
+      }
+    </script>
+
+    <!-- // be remember this is the line is most import for the to check the 
+    code in the js fiddle
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelector("button").addEventListener("click", printDetails);
+      }); -->
+  </body>
+</html>

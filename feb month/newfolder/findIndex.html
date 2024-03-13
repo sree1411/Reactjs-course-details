@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+      <script>
+        //findindex method 
+
+       var arr = [12,33,43,26,98,13,67]
+          arr.findIndex(function(a,i){
+              console.log("hi", a, i);  
+          })
+      /// ela raste same find lo lage ani values along with index kuda manaki return chestadi
+      ///find index oka example 
+
+      var arr = [12,33,43,26,98,13,67]
+         var k = +prompt()
+         var res = arr.findIndex((a,i)=>{
+                if(k === a){
+                    return true
+                }else{
+                    return false
+                }
+         })
+    
+       console.log("respose value index is:",res);
+
+     /// edi ithy number estamo aa number unte dani indexvalue estadi
+     //lekapothey -1 value estadi 
+   
+
+
+
+
+      </script>
+</body>
+</html>

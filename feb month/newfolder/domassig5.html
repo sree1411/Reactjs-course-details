@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .dd{
+            display: none;
+         }
+    </style>
+</head>
+<body>
+       
+        <h1 id="d1"> sachin  tendulkar</h1>
+        <p id="dd">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, fugiat!</p>
+
+     <script>
+        let ele1 = document.querySelector('#d1')
+        ele1.addEventListener('click', (ele)=>{
+             const ele2 = document.getElementById('dd')
+             ele2.classList.toggle('dd')
+        })
+     </script>
+</body>
+</html>

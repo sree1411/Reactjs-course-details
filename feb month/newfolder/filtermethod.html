@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+      <script>
+          // filter method //
+          //The purpose of filter() is to create a new array containing only the elements for which 
+          //the callback function returns true. In JavaScript, 0 is considered a falsy value, and 
+          //any non-zero number is considered truthy.
+
+          var arr = [10,25,72,64,97,37]
+           var res =  arr.filter(function(a,i){
+                return true
+              })
+
+         console.log(res);
+         
+          //return true este ani values vastadi ,false ithy [] array vastsdi
+
+          //if i want to print the even numbers in the array
+
+          var arr = [10,25,72,64,97,37]
+           var res =  arr.filter(function(a,i){
+                if(a%2 === 0){
+                    console.log("even number",a);
+                    return 'even' 
+                   
+                } 
+
+                else{
+                    console.log("odd number",a);
+                    return 'odd' //
+                    return false
+                  
+                }
+              })
+
+         console.log("even number and odd are", res);
+   
+
+         // console.log place lo even and odd number display avudi, response
+         //be rember filter manam oka condition este dani value le store chesukuntadi
+         //above lo only manaki odd or even okate estadi 
+            
+      </script>
+</body>
+</html>

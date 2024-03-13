@@ -1,0 +1,362 @@
+import { useState } from 'react';
+import './App.css';
+
+function App() {
+
+     const [firstname, setFirstName] = useState('')
+     const [lastname, setLastName] = useState('')
+     const [email, setEmail] = useState('')
+
+     
+     function handleFirstName(e){
+       setFirstName(e.target.value)
+     } 
+
+     function handleLastName(e){
+      setLastName(e.target.value)
+     }
+     
+     function handleEmail(e){
+      setEmail(e.target.value)
+     }
+
+
+     
+  return (
+    <div className="App">
+     <form>
+       <input type="text" onKeyUp={handleFirstName} placeholder='enter firstname' />
+       <input type="text" onKeyUp={handleLastName} placeholder='enter lastname'  />
+       <input type="text" onKeyUp={handleEmail}  placeholder='enter ' />
+       <h1>{firstname}</h1>
+       <h1>{lastname}</h1>
+       <h1>{email}</h1>
+       
+     </form>
+    </div>
+  );
+}
+
+export default App;
+
+this is the controlled forms !
+
+In most cases, we recommend using controlled components to implement forms.
+In a controlled component, form data is handled by a React component.
+The alternative is uncontrolled components, where form data is handled by the DOM itself.
+
+
+//so manam elage prathi daniki separate ga handleinputname este  
+firstname ki handleFirstName, last name ki handleLastName ela anitiki separate ga echam,
+ela separate separeate ga kakunda single ga kuda evavachu ade elaga ante dini below example
+
+
+import { useState } from 'react';
+import './App.css';
+
+function App() {
+
+ 
+     const [user, setUser] = useState({
+      firstname:"",
+      lastname:"",
+      email:""
+     })
+
+   function handleFirstName(e){
+       setUser({...user, firstname:e.target.value})
+    }
+    function handleLastName(e){
+      setUser({...user, lastname:e.target.value})
+   }
+   function handleEmail(e){
+    setUser({...user, email:e.target.value})
+ }
+
+ function submit(e){
+  e.preventDefault()
+  console.log(user);
+  console.dir(user);
+  console.table(user);
+
+
+}
+  return (
+    <div className="App">
+     <form >
+       <input type="text" onKeyUp={handleFirstName}  placeholder='enter firstname' />
+       <input type="text" onKeyUp={handleLastName}  placeholder='enter firstname' />
+       <input type="text" onKeyUp={handleEmail}   placeholder='enter firstname' />
+       <button onClick={submit}> submit</button>
+     </form>
+    </div>
+  );
+}
+
+export default App;
+
+
+/// anitiki okate handleinputluuu  este apudu ela rayali ante 
+handleinput lu ani okate este input filed lo name mention cheyali be remember
+
+elage rayali
+ 
+import { useState } from 'react';
+import './App.css';
+
+function App() {
+
+ 
+     const [user, setUser] = useState({
+      firstname:"",
+      lastname:"",
+      email:""
+     })
+
+   function handleInput(e){
+       setUser({...user, [e.target.name]:e.target.value})
+    }
+    
+    //e.target.name is taking as a key dinini enchance liternals antaru //
+
+ function submit(e){
+  e.preventDefault()
+  console.log(user);
+  console.dir(user);
+  console.table(user);
+
+
+}
+  return (
+    <div className="App">
+     <form >
+       <input type="text" onKeyUp={handleInput}  name='firstname' placeholder='enter firstname' />
+       <input type="text" onKeyUp={handleInput}  name='lastname'  placeholder='enter firstname' />
+       <input type="text" onKeyUp={handleInput}  name='email' placeholder='enter firstname' />
+       <button onClick={submit}> submit</button>
+     </form>
+    </div>
+  );
+}
+
+export default App;
+
+//// here another way
+
+ 
+import { useState } from 'react';
+import './App.css';
+import { useRef } from 'react';
+
+function App() {
+     const formRef = useRef(null);
+     const [users, setUsers] = useState([])
+     const [user, setUser] = useState({
+      firstname:"",
+      lastname:"",
+      email:""
+     })
+
+   function handleInput(e){
+       setUser({...user, [e.target.name]:e.target.value})
+    }
+    
+
+    function submit(e){
+      e.preventDefault()
+      setUsers([...users, user]);
+      setUser({ // Reset the user state to clear the input fields
+        firstname:"",
+        lastname:"",
+        email:""
+      });
+      formRef.current.reset();
+    }
+  return (
+    <div className="App">
+      //onKeyUp place lo onchange kuda mention cheyavachu be remember and ref usechesi reset cheyavachu
+     <form ref={formRef}>
+       <input type="text" onKeyUp={handleInput}  name='firstname'  placeholder='enter firstname' />
+       <input type="text" onKeyUp={handleInput}  name='lastname'  placeholder='enter firstname' />
+       <input type="text" onKeyUp={handleInput}  name='email' placeholder='enter firstname' />
+       <button onClick={submit}> Add User</button>
+     </form>
+     <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      users.map((person, index)=>{
+        return <>
+        <tr>
+        <td>{person.firstname}</td>
+        <td>{person.lastname}</td>
+        <td>{person.email}</td>
+      </tr>
+        </>
+      })
+    }
+   
+  </tbody>
+</table>
+    </div>
+  );
+}
+
+export default App;
+
+
+//onKeyUp place lo onchange kuda mention cheyavachu be remember and ref usechesi reset cheyavachu
+///
+onchange cheste value kuda mention cheyali be remember 
+ 
+import { useState } from 'react';
+import './App.css';
+import { useRef } from 'react';
+
+function App() {
+
+     const [users, setUsers] = useState([])
+     const [user, setUser] = useState({
+      firstname:"",
+      lastname:"",
+      email:""
+     })
+
+   function handleInput(e){
+       setUser({...user, [e.target.name]:e.target.value})
+    }
+    
+
+    function submit(e){
+      e.preventDefault()
+      setUsers([...users, user]);
+      setUser({ // Reset the user state to clear the input fields
+        firstname:"",
+        lastname:"",
+        email:""
+      });
+       
+    }
+  return (
+    <div className="App">
+     <form>
+       <input type="text" onChange={handleInput} value={user.firstname} name='firstname'  placeholder='enter firstname' />
+       <input type="text" onChange={handleInput} value={user.lastname} name='lastname'  placeholder='enter firstname' />
+       <input type="text" onChange={handleInput} value={user.email} name='email' placeholder='enter firstname' />
+       <button onClick={submit}> Add User</button>
+     </form>
+     <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      users.map((person, index)=>{
+        return <>
+        <tr>
+        <td>{person.firstname}</td>
+        <td>{person.lastname}</td>
+        <td>{person.email}</td>
+      </tr>
+        </>
+      })
+    }
+   
+  </tbody>
+</table>
+    </div>
+  );
+}
+
+export default App;
+
+//in this code we have useRef to focus the particular input filed 
+
+import { useState } from 'react';
+import './App.css';
+import { useRef } from 'react';
+import { useEffect } from 'react';
+
+function App() {
+     const formRef = useRef(null);
+     const fnameRef = useRef()
+     const lnameRef = useRef()
+     const [users, setUsers] = useState([])
+     const [user, setUser] = useState({
+      firstname:"",
+      lastname:"",
+      email:""
+     })
+
+   function handleInput(e){
+       setUser({...user, [e.target.name]:e.target.value})
+       if(e.target.name ==="firstname"){
+        if(e.key === "Control"){
+          lnameRef.current.focus()
+        }
+       }
+    }
+    
+
+    function submit(e){
+      e.preventDefault()
+      setUsers([...users, user]);
+      setUser({ // Reset the user state to clear the input fields
+        firstname:"",
+        lastname:"",
+        email:""
+      });
+      formRef.current.reset();
+    }
+
+    useEffect(()=>{
+      fnameRef.current.focus()
+    }, [])
+
+
+  return (
+    <div className="App">
+     <form ref={formRef}>
+       <input type="text" onKeyUp={handleInput}  ref={fnameRef} name='firstname'  placeholder='enter firstname' />
+       <input type="text" onKeyUp={handleInput}  ref={lnameRef}  name='lastname'  placeholder='enter firstname' />
+       <input type="text" onKeyUp={handleInput}  name='email' placeholder='enter firstname' />
+       <button onClick={submit}> Add User</button>
+     </form>
+     <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      users.map((person, index)=>{
+        return <>
+        <tr>
+        <td>{person.firstname}</td>
+        <td>{person.lastname}</td>
+        <td>{person.email}</td>
+      </tr>
+        </>
+      })
+    }
+   
+  </tbody>
+</table>
+    </div>
+  );
+}
+
+export default App;

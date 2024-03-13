@@ -1,0 +1,40 @@
+<section id="login_page" style="height:100%" *ngIf="!loggedIn">
+    <div class="row no-gutters">
+        <div class="col d-flex justify-content-center right_maincol">
+            <div class="right_col">
+                <div class="right_col_head">
+                    <div class="d-flex text-center justify-content-center">
+                        <h3>Welcome to <span>Credocard</span></h3>
+                    </div>
+                </div>
+                <div [formGroup]="loginForm" id="form">
+                    <div>
+                        <label for="email" [class.field-focus]="isEmailFocussed">Email Address</label>
+                        <input formControlName="email" type="text" class="form-control p-0 email-input"
+                            placeholder="User Email" (focus)="emailOnFocus()" (focusout)="emailOnFocusOut()">
+                    </div>
+                    <div class="passwordL">
+                        <label for="password" [class.field-focus]="isPwdFocussed">Password</label>
+                        <input formControlName="password" type="password" class="form-control p-0 pwd-input"
+                            placeholder="************" (focus)="pwdOnFocus()" (focusout)="pwdOnFocusOut()">
+                    </div>
+
+                    <div class="text-danger" *ngIf="failedLogin">
+                        <h6>Username and Password mismatch</h6>
+                    </div>
+
+                </div>
+                <p class="text-right "><a routerLink="/forgotpassword" class="for_pass ">Forgot Password?</a></p>
+                <div class="text-center login_btn">
+                    <button type="button" class="btn btn-center login-button btn-responsive" (click)="login(loginForm)">Login</button>
+                </div>
+                <div class="text-center mt-4 register">
+                    <span routerLink="/register">Register</span>      
+                </div>          
+            </div>
+        </div>
+    </div>
+</section>
+<div *ngIf="loggedIn && loginForm.valid">
+    <div class="loader page-loader"></div>
+</div>

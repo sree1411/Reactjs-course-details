@@ -1,0 +1,63 @@
+<html>
+
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+
+    <body>
+        <div id="d3"></div>
+        <script type="text/babel">
+            function App() {
+                var [mins, setMins] = React.useState(20);
+                var [secs, setSecs] = React.useState(0);
+                var [intervalId, setIntervalId] = React.useState(null);
+
+                React.useEffect(() => {
+                    setMins(20);
+                    setSecs(0);
+                    return () => clearInterval(intervalId);
+                }, []);
+
+                var start = () => {
+                    clearInterval(intervalId);
+                    setIntervalId(
+                        setInterval(() => {
+                            if (secs === 0) {
+                                setSecs(59);
+                                setMins((prevMins) => prevMins - 1);
+                            } else {
+                                setSecs((prevSecs) => prevSecs - 1);
+                            }
+                        }, 1000)
+                    );
+                };
+
+                var stop = () => {
+                    clearInterval(intervalId);
+                    setMins(0);
+                    setSecs(0);
+                };
+
+                var pause = () => {
+                    clearInterval(intervalId);
+                };
+
+                return (
+                    <div>
+                        <h1 id="dd">
+                            <span id="mi">{mins}</span>:<span id="se">{secs}</span>
+                        </h1>
+                        <button onClick={start}>start</button>
+                        <button onClick={stop}>stop</button>
+                        <button onClick={pause}>pause</button>
+                    </div>
+                );
+            }
+
+            ReactDOM.render(<App />, document.getElementById("d3"));
+        </script>
+    </body>
+
+</html>

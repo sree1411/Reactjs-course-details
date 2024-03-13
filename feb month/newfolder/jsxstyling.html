@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+ <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+ <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <h1 style="color: red; background-color: blue;"> this is the html element </h1>
+    <div id="d2">
+        
+    </div>
+    <script type="text/babel">
+         
+         var c = prompt("enter the color name")
+         var b = +prompt("enter the value")
+
+         var newList= <h1 style={{color:"red", backgroundColor: c }}> React Element {b} </h1>
+
+        ReactDOM.render(newList, document.getElementById('d2'))
+      </script>
+</body>
+</html>
+<!-- //react styling// -->

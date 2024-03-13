@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let temparates = [9, 5, -2, -4, "error", 9, 0, 2, 4, 5, 5, 8, 6];
+      let amplitudeValue = function (temps) {
+        let max = temps[0];
+        let min = temps[0];
+
+        for (let i = 0; i < temps.length; i++) {
+          if (typeof temps[i] !== "number") break;
+          console.log(temps[i]);
+          if (temps[i] > max) {
+            max = temps[i];
+          }
+          if (temps[i] < min) {
+            min = temps[i];
+          }
+        }
+
+        const result = max - min;
+        return result;
+      };
+
+      const values = amplitudeValue(temparates);
+      console.log(values);
+    </script>
+  </body>
+</html>

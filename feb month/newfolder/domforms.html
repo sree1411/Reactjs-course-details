@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- //form lo ele and dani dani value ela find cheyali ane method -->
+
+    <!-- <input type="text" id="fn">
+     <button onclick="print()"> print</button>
+     <script>
+             function print(ele1){
+                let ele = document.getElementById('fn')
+                console.dir(ele.value);
+             }
+     </script> -->
+
+    // ee example ni two ways lo rayavachu
+
+    <input type="text" id="fn" onkeypress="print()" />
+    <h1 id="dd"></h1>
+    <script>
+      let textcont = document.getElementById("fn");
+      let ele = document.getElementById("dd");
+      function print(ele1) {
+        var inputvalue = textcont.value;
+        ele.innerHTML = inputvalue;
+      }
+    </script>
+
+    or
+
+    <input type="text" id="fn" onkeypress="print()" />
+    <h1 id="dd"></h1>
+    <script>
+      function print(ele1) {
+        let textcont = document.getElementById("fn").value;
+        let ele = document.getElementById("dd");
+        var inputvalue = textcont;
+        ele.innerHTML = inputvalue;
+      }
+    </script>
+  </body>
+</html>

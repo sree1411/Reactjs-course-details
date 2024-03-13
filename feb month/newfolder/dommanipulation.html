@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <h1 id="wp"> welcome to the page </h1>
+      <p> Lorem ipsum dolor sit amet.</p>
+      <h1> Lorem ipsum dolor sit amet.</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <h1>Lorem, ipsum dolor.</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <script>
+         let welPag = document.getElementById('wp')
+        console.dir(welPag.innerHTML)
+        
+         let welpa = document.getElementsByTagName('h1')
+         console.dir(welpa)  // html collection vastadi so for loop use chesukovachu
+         for(i=0; i<welpa.length; i++){
+            console.log(welpa[i].innerHTML)
+            welpa[i].style.backgroundColor ="red"
+         }
+         
+         let welPtag = document.querySelectorAll('p')
+         welPtag.forEach((a,i)=>{
+         
+             console.log(i);
+              if(i%2===0){
+                a.style.backgroundColor= "green"
+              }else{
+                a.style.backgroundColor= "yellow"
+              }
+         })
+         
+      </script>
+    //be remember manam index pamapli ante gani a ni pampakudadhu, 
+</body>
+</html>

@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+.navsection {
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+  background-color: blue;
+  color: white;
+}
+.submenu{
+  background-color: azure;
+}
+.submenu ul{
+  display: flex;
+  justify-content: space-around;
+}
+
+.mobiles{
+  display: flex;
+}
+.mobsection{
+  display: grid;
+  grid-template-columns: 300px 300px 300px 300px;
+}
+.mobInfo{
+  display: flex;
+}

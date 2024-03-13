@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+.navSection{
+  display: flex;
+  justify-content: space-around;
+  background-color: aqua;
+  color: black;
+  height: 50px;
+}
+.cellsection{
+  display: flex;
+}
+.submenu{
+  height: 50px;
+  background-color: black;
+  color: white;
+}
+.submenu ul{
+  display: flex;
+  justify-content: space-around;
+}

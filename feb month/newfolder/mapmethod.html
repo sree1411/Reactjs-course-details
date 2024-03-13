@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+      <script>
+           //map method
+   
+           var arr = [10,25,72,64,97,37]
+             var res =  arr.map(function(a, i){
+                  console.log('hi',a, i);
+               })
+            console.log(res);
+        // ee code ni chuste response lo hi 7 times vastadi along with index
+        //but response lo undefined vastadi becuase map method expects the return value
+
+        var arr = [10,25,72,64,97,37]
+             var res =  arr.map(function(a, i){
+                  console.log('hi',a, i);
+                  return 1234
+               })
+            console.log(res);
+
+      // ekada return lo hello echam so edi 7 times return avudii
+
+     // for example we have given array and we need to add 10 to the each element
+
+            var arr = [10,25,72,64,97,37]
+            var res =  arr.map(function(a, i){
+                   return a+10
+               })
+            console.log("10 is added to the value",res);
+
+      /// map methods expects the return value ,find method also expects the return value
+      </script>
+</body>
+</html>

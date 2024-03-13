@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- <button onclick="toggleEle(event)"> toggle </button>
+     <p  id="df" class="dd"> True</p>
+      
+     <script>
+        // function toggleEle(event){
+        //     let newEle = document.querySelector('#df')
+        //     newEle.classList.toggle('dd')
+        //     if(newEle.classList.contains('dd')){
+        //         newEle.textContent ="false"
+        //     }else{
+        //         newEle.textContent ="True"
+        //     }
+        // }
+
+
+     </script> -->
+
+     <button onclick="toggleEle()"> toggle </button>
+     <p id="dd"> True</p>
+     <script>
+        function toggleEle(){
+            let newEl = document.querySelector('#dd')
+        if(newEl.textContent === 'True'){
+            newEl.textContent ="false"
+        }else{
+            newEl.textContent ="True"
+        }
+        }
+      
+     </script>
+</body>
+</html>

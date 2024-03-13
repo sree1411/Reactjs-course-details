@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 100px;
+            width: 100px;
+            border: 2px solid black;
+        }
+        .box1{
+            background-color: red;
+        }
+        .box2{
+            background-color: yellow;
+        }
+        .btn1.active {
+            background-color: red;
+        }
+
+        .btn2.active {
+            background-color: yellow;
+        }
+        .btn2{
+            background-color: white;
+        }
+         
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <button onclick="toggleColor(this)" class="btn1 active"> ON </button>
+    <button onclick="toggleColor(this)" class="btn2"> OFF </button>
+
+    <script>
+       function toggleColor(button){
+           let ele = document.querySelector('.box')
+           let buttons = document.querySelectorAll('button');
+           buttons.forEach((ele)=>{
+               ele.classList.toggle('active')
+           })
+           ele.classList.toggle('box1')
+           ele.classList.toggle('box2')
+       }
+    </script>
+</body>
+</html>
+
+
+/// alternate approach
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+          height: 100px;
+          width: 100px;
+          border: 1px solid red;
+          border-radius: 10px;
+        }
+        
+        
+    </style>
+
+</head>
+<body>
+       
+       <div id="box">
+             
+       </div>
+       <button id="onbtn"> on </button>  <button id="offbtn"> off </button>
+      <script>
+      
+      let ele = document.querySelector('#box')
+      let btn1 = document.querySelector('#onbtn')
+      let btn2 = document.querySelector('#offbtn')
+
+      btn1.addEventListener('click', ()=>{
+        if(ele.classList.add('active1')){
+             ele.style.backgroundColor = "white"
+        } else{
+            ele.style.backgroundColor = "red"
+        }
+        
+      })
+       
+      btn2.addEventListener('click', ()=>{
+        if(ele.classList.add('active2')){
+            ele.style.backgroundColor = "red"
+        }else{
+            ele.style.backgroundColor = "white"
+        }
+      })
+
+      </script>
+</body>
+</html>

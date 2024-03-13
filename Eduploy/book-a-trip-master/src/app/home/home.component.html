@@ -1,0 +1,25 @@
+<div class="container p-3 mt-2">
+    <h1 class="text-center">Book - A - Trip</h1>
+    <div class="d-flex justify-content-around mb-3">
+        <div>
+            <label>Choose your pickup location</label>
+            <input #searchPickup type="text" class="form-control" placeholder="Enter your pickup location">
+        </div>
+        <div>
+            <label>Choose your drop location</label>
+            <input #searchDrop type="text" class="form-control" placeholder="Enter your drop location">
+        </div>
+    </div>
+    <div class="d-flex justify-content-center mb-3">
+        <button class="btn btn-primary search-btn" (click)="searchRoute()">Search</button>
+    </div>
+    <google-map
+        width="100%"
+        [center]="currentLocation"
+        [options]="mapConfigurations"
+    >
+        <map-marker *ngIf="!directionsResults$" [position]="markerLocation" [options]="markerOptions" (mapDragend)="handlePosChange()"></map-marker>
+        <map-directions-renderer *ngIf="(directionsResults$ | async) as directionsResults" [directions]="directionsResults" [options]="directionsRendererOptions" (directionsChanged)="handleDirChange()">
+        </map-directions-renderer>
+    </google-map>
+</div>

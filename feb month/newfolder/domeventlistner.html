@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+     <!-- // event listnener ni 3 types rasam ekada
+     1.inline
+     2.eventlistener (addEventListener)
+     3.onclick
+
+     //onclick raste function rayali and event listnener ni kuda raste manam 
+     //aa function enti and click event ani mention chesi danini call back cheyali -->
+
+         <div style="width: 100px;height: 100px; border:2px solid black;" onclick="abc()">
+             hello world 
+         </div>
+
+         <div  id="d1"  style="width: 100px;height: 100px; border:2px solid black;">
+            hello world  d1
+        </div>
+
+        <div  id="d2"  style="width: 100px;height: 100px; border:2px solid black;">
+            hello world  d2
+        </div>
+
+        <div  id="d3"  style="width: 100px;height: 100px; border:2px solid black;cursor: pointer;">
+            hello world d3
+        </div>
+         <input type="text" onclick="xyz()">
+
+         <script>
+            function abc(){
+                console.log('inline event listener')
+            }
+
+            function xyz(){
+                console.log('input tag')
+            }
+            var x = document.getElementById('d1')
+            x.addEventListener('click', function(){
+                alert('use the add event listener');
+                
+            })
+              
+            console.log(x);
+            console.dir(x);
+           
+
+            
+
+            var y = document.getElementById('d2')
+            y.onclick = ()=>{
+                console.log('onlclick event listner');
+                console.dir(y);
+            }
+
+            console.log(y);
+
+            var z = document.getElementById('d3')
+            z.onclick =(e)=>{
+             console.log(e.target.styel.color);
+            }
+         
+         </script>
+</body>
+</html>

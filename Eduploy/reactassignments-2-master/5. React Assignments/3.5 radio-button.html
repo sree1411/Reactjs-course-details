@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="d5" style="border:5px solid red;padding:10px">
+    
+    </div>
+    <script type="text/babel">
+      function MyComp(){
+        var [gender,setGender]=React.useState(null);
+        function handleGender(e){
+          setGender(e.target.value)
+        }
+        return(
+          <div>
+            <input type="radio" name='gender' value='male' onChange={handleGender}/>:Male
+            <input type="radio" name='gender' value='female' onChange={handleGender}/>:Female
+            <input type="radio" name='gender' value='others' onChange={handleGender}/>:Others
+            <h5>Selected Gender:{gender}</h5>
+          </div>
+        )
+      }
+
+      ReactDOM.render(<MyComp></MyComp>,document.getElementById("d5"))
+    </script>
+  </body>
+</html>

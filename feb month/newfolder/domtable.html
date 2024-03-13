@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .democlass {
+            color: red;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="table"></div>
+    <script>
+        var peoples = [
+            {
+                firstname: "sreekanth",
+                lastname: "renati",
+                gender: "male",
+            },
+            {
+                firstname: "virat",
+                lastname: "kohli",
+                gender: "male",
+            },
+            {
+                firstname: "dhoni",
+                lastname: "mahendra",
+                gender: "male",
+            },
+        ];
+        let table = document.getElementById("table");
+
+        let thead = document.createElement("thead");
+        thead.setAttribute("class", "democlass");
+        let tr = document.createElement("tr");
+        
+
+        let th1 = document.createElement("th");
+        th1.innerHTML = "firstname";
+
+        let th2 = document.createElement("th");
+        th2.innerHTML = "lastname";
+
+        let th3 = document.createElement("th");
+        th3.innerHTML = "gender";
+
+        tr.appendChild(th1);
+        tr.appendChild(th2);
+        tr.appendChild(th3);
+
+        thead.appendChild(tr);
+        table.appendChild(thead);
+
+        let tbody = document.createElement("tbody");
+        peoples.forEach((people) => {
+            let tr = document.createElement("tr");
+
+            let td1 = document.createElement("td");
+            td1.innerHTML = people.firstname;
+
+            let td2 = document.createElement("td");
+            td2.innerHTML = people.lastname;
+
+            let td3 = document.createElement("td");
+            td3.innerHTML = people.gender;
+
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+
+            tbody.appendChild(tr);
+        });
+
+        table.appendChild(tbody);
+    </script>
+</body>
+</html>

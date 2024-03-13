@@ -1,0 +1,403 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="dom-and-events.css">
+    <link rel="stylesheet" href="../../neumorphism.css">
+</head>
+
+<body>
+    <div class="main">
+        <h1>Working with Document Object</h1>
+        <ol>
+            <li>
+                <p>Given an h1 element: </p>
+                <b>&lt;h1&gt;Hello World&lt;/h1&gt;</b>
+                <ol type="a">
+                    <li class="nested">
+                        Print the text inside the h1 element in the console.
+                    </li>
+                    <li class="nested">
+                        Print the data type of the text inside the h1.
+                    </li>
+                    <li class="nested">
+                        Print the text inside the h1 in uppercase in the console.
+                    </li>
+                    <li class="nested">
+                        Change the text of the h1 to "Welcome to Edupoly".
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <p>Print the texts inside the h1 and h2 elements in the console.</p>
+                <b>
+                    &lt;h1 class="a"&gt;Hello&lt;/h1&gt;<br>
+                    &lt;h2 class="a"&gt;Edupoly&lt;/h2&gt;<br>
+                    &lt;p class="b"&gt;Training&lt;/p&gt;
+                </b>
+            </li>
+            <li>
+                <p>Store the texts of each li element in an array.</p>
+                <b>
+                    &lt;ul&gt; <br>
+                    &nbsp;&nbsp;&nbsp;&lt;li&gt;Apple&lt;/li&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&lt;li&gt;Mango&lt;/li&gt; <br>
+                    &nbsp;&nbsp;&nbsp;&lt;li&gt;Orange&lt;/li&gt; <br>
+                    &lt;/ul&gt;
+                </b>
+            </li>
+            <li>
+                <p>Print the text inside the first paragraph element in the console.</p>
+                <b>
+                    &lt;h1&gt;Hello&lt;/h1&gt;<br>
+                    &lt;p&gt;Edupoly&lt;/p&gt;<br>
+                    &lt;p&gt;Training&lt;/p&gt;<br>
+                    &lt;p&gt;Something&lt;/p&gt;
+                </b>
+            </li>
+            <li>
+                <p>Generate HTML Elements using document object</p>
+                <iframe src="./images/1. DOM-ASSIGNMENT.pdf" frameborder="0" width="70%" height="100%"></iframe>
+            </li>
+            <li class="nested">
+                <p>
+                    Generate List Elements using document object for the given Array of Objects
+                </p>
+                <pre>
+                    var students = [
+                                {
+                                name:'jaya',
+                                gender:'female',
+                                place:'gachibowli',
+                                },
+                                {
+                                name:'dasu',
+                                gender:'male',
+                                place:'kphb'
+                                },
+                                {
+                                name:'swati',
+                                gender:'female',
+                                place:'pune'
+                                },
+                                {
+                                name:'pallavi',
+                                gender:'female',
+                                place:'assam'
+                                },
+                                {
+                                name:'kiran',
+                                gender:'male',
+                                place:'kondapur'
+                                },
+                                {
+                                name:'thirumala',
+                                gender:'male',
+                                place:'madhapur'
+                                },
+                                {
+                                name:'priya',
+                                gender:'female',
+                                place:'hitech'
+                                },
+                            ]
+                </pre>
+                Exprected Output:
+                <img src="./images/2.genui.png" width="100%"></img>
+            </li>
+            <li class="nested">
+                <p>Display the above data like the following image using Javascript DOM Element creation and append
+                </p>
+                <pre>
+                    var students = [		
+                                    {
+                                        "firstname": "praveen",
+                                        "age": 36,
+                                        "subjects":['angular','nodejs','reactjs','java']
+                                    }, 
+                                    {
+                                        "firstname": "srikanth",
+                                        "age": 32,
+                                        "subjects":['react','mongodb']
+                                    }, 
+                                    {
+                                        "firstname": "pradeep",
+                                        "age": 21,
+                                        "subjects":['express','mongoose','python']
+                                    }
+                            ]
+
+                </pre>
+                <img src="./images/3.genui-json.png" width="300px" alt="">
+            </li>
+            <li class="nested">
+                <p>
+                    Generate UI using document object for the given Array of Objects
+                </p>
+                <pre>
+                    var people = [
+                        {
+                        "firstname": "praveen",
+                        "lastname": "gubbala",
+                        "age": 36,
+                        "gender": "male",
+                        "city": "hyd",
+                        "salary": 10000
+                        },
+                        {
+                        "firstname": "srikanth",
+                        "lastname": "gubbala",
+                        "age": 32,
+                        "gender": "male",
+                        "city": "bengaluru",
+                        "salary": 20000
+                        },
+                        {
+                        "firstname": "pradeep",
+                        "lastname": "reddy",
+                        "age": 21,
+                        "gender": "male",
+                        "city": "hyd",
+                        "salary": 30000
+                        },
+                        {
+                        "firstname": "mounika",
+                        "lastname": "mudiraj",
+                        "age": 20,
+                        "gender": "female",
+                        "city": "nalgonda",
+                        "salary": 30000
+                        },
+                        {
+                        "firstname": "nikhil",
+                        "lastname": "m",
+                        "age": 22,
+                        "gender": "male",
+                        "city": "guntur",
+                        "salary": 2000
+                        },
+                        {
+                        "firstname": "riya",
+                        "lastname": "bhadouria",
+                        "age": 14,
+                        "gender": "female",
+                        "city": "indore",
+                        "salary": 40000
+                        }
+                        ];
+                </pre>
+                <ol>                    
+                    <li class="nested">Display all the people's data in a table.</li>
+                    <li class="nested">Display all male and female people in two separate tables.</li>
+                    <li class="nested">Display only those people in a table who are having salaries more than 20000.</li>
+                    <li class="nested">Display only the male people who are above the age of 25.</li>
+                </ol>
+            </li>
+            <li class="nested">
+                <p>Generate UI using document object for the given Array of Objects</p>
+                <pre>
+                    var products = [
+			{
+				"name": "Duracell - AAA Batteries (4-Pack)",
+				"type": "HardGood",
+				"price": 5.49,
+				"category": "Household Batteries",
+				"manufacturer": "Duracell",				
+			},
+			{
+				"name": "Hard Rock TrackPak - Mac",
+				"type": "Software",
+				"price": 29.99,
+				"category": "Recording Equipment",
+				"manufacturer": "Hal Leonard",				
+			},
+			{
+				"name": "Duracell - AA 1.5V CopperTop Batteries (4-Pack)",
+				"type": "HardGood",
+				"price": 5.62,
+				"category": "Household Batteries",
+				"manufacturer": "Duracell",				
+			},
+			{
+				"name": "Energizer - MAX Batteries AA (4-Pack)",
+				"type": "HardGood",
+				"price": 5.32,
+				"category": "Household Batteries",
+				"manufacturer": "Energizer",				
+			},
+			{
+				"name": "METRA - Antenna Cable Adapter - Black",
+				"type": "HardGood",
+				"price": 13.99,
+				"category": "Antennas & Adapters",
+				"manufacturer": "Metra",				
+			},
+			{
+				"name": "WipeDrive Six - Mac|Windows",
+				"type": "Software",
+				"price": 23.99,
+				"category": "Maintenance Software",
+				"manufacturer": "White Canyon",				
+			}
+		];
+                </pre>
+                <ol>
+                    <li>Display all the products in a table</li>
+                    <li>Display only the name and price of each product in a table.</li>
+                    <li>Display all the products in ascending order of their prices.</li>
+                    <li>Display the hardgoods and software in separate tables.</li>
+                </ol>
+            </li>
+            <li>
+                <h2>Assignments on Events</h2>
+                <ol>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/rIa1JeIwY90" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/tVCTTY9ZB7Y" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/hTLSaxZ0FLY" frameborder="0" allowfullscreen></iframe>
+                        
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/G7E0BeW4Rss" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ihf8s9VOpUY" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Cgt-TzSqjmY" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/-u9pNfmSqyc" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Trr4Y-Hc5a8" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/GcqlgfeVgQc" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/cUpwXSf98DI" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/GcP25Y_jjbA" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Fy5VGjr_1Bw" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/fS06-Ry7opc" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/elFhrGzj9jw" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/uhO31DHPweA" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Tbk_QZYPCpU" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/vHNwADv01wQ" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/tVCTTY9ZB7Y" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/f44CMNSj1IM" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Nk6gPuYsokI" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Oum6sqdOa_c" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/3XgGqHlRVAk" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <b>Assignments on Forms and Events</b>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/x2Rb7xh7M8g" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/WD3SetRbYP8" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Jy5dAP_piaM" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/3ttq-hYLuTY" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/1q308lcsnjs" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/OwACNdqsuGY" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <img src="./images/7.html5 validation with error color.png" width="560" height="315" alt="">
+                    </li>
+                    <li class="nested">
+                        <img src="./images/8.paswwordcustomvalidation.gif" width="560" height="315" alt="">
+                    </li>
+                    <li class="nested">
+                        <img src="./images/9.check relation ship.jpg" width="100%" alt="">
+                    </li>
+                    <b>Date and Timer Functions</b>
+                    <li class="nested">
+                        <h6>Enter the date of birth and calculate the age in years.</h6>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/zB6aM3o6mjM" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <h6>Companies and organisations have automated check-in and check-out systems for registering attendance. When employees enter the office, they check in through a system to record their entry to the office. The time at which they enter the office is known as CHECK IN time. But the employee may go out for several small breaks within a day. Every time they go out, they must check out to register their exit. The time at which they go out is known as CHECK OUT time. Again when they come back to the office after the breaks, they need to check in. The duration between a CHECK IN time and a CHECK OUT times is known as IN TIME. These IN times are recorded and added up at the end of the day. The total time tell us for how much time the employee was present in the office.
+                        <ol type="a">
+                            <li class="nested">
+                                <h6>Given below is a system to record the check-in and check-out times of an employee. Given are two buttons, IN and OUT.
+                                When someone clicks on the IN button, it records the time he/she checks in at and displays it below. Similarly, on
+                                clicking the OUT button, it records the check out time and displays it below. Create a program to display the time log
+                                of an employee as shown below.</h6>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/nQkxOuwb_Uo" frameborder="0"
+                                    allowfullscreen></iframe>
+                            </li>
+                            <li class="nested">
+                                <h6>Display the total time worked by an employee by observing the checked in and checked out timespans. The Check In
+                                    and Check Out buttons record the check in and check out times. According to the check in check out times,
+                                    display the total time worked by the employee as shown below.</h6>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/hwL0yr3Ixvg" frameborder="0"
+                                    allowfullscreen></iframe>
+                            </li>
+                        </ol>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/HmLwtz7hvVw" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/eMKZS_-bY0U" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <b>Few More Tasks:</b>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/gIZ6JLdJI5o" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZwbhBfOjsaQ" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/NSVkNss4iwk" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                    <li class="nested">
+                        <img src="/images/3. Reference Design.jpg" alt="">
+                    </li>
+                </ol>
+            </li>
+        </ol>
+    </div>
+</body>
+
+</html>

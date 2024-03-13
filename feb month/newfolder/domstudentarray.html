@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <ul>
+        <li>Dhoni</li>
+        <li>sehwag</li>
+        <li>sachin</li>
+        <li>virat</li>
+        <li>jadeja</li>
+      </ul>
+      <ol id="dd">
+
+      </ol>
+      <script>
+        let students = ["Dhoni", "sehwag", "sachin" , "virat", "jadeja"]
+         students.forEach((student)=>{
+          let ddEle = document.querySelector('#dd')
+          let newli = document.createElement('li')
+          newli.innerHTML = student
+        
+          let newBtn = document.createElement('button')
+          newBtn.innerHTML ="Delete"
+          newli.append(newBtn)
+          
+          newBtn.addEventListener('click', (e)=>{
+             e.target.parentElement.remove()
+          })
+          
+          ddEle.append(newli)
+         })
+      </script>
+</body>
+</html>

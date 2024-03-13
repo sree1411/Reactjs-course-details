@@ -1,0 +1,48 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+.navsection{
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  height: 80px;
+  padding-top: 20px;
+}
+.proSection{
+  display: flex;
+  padding: 10PX;
+}
+.imgbox{
+   width: 80%;
+}
+
+.imgbox img{
+  width: 80%;
+}
+.user{
+  display: flex;
+  gap: 10px;
+}
+
+.sub-menu{
+  height: 50px;
+  background-color: aqua;
+}
+.sub-menu ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+li{
+  background-color: white;
+  border-radius: 3px;
+}
+.containerPart{
+   display: flex;
+   flex-direction: row;
+  }

@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    
+    <div id="d3"></div>
+
+    <script type="text/babel">
+      function App() {
+        var [inputValue, setInputValue] = React.useState("");
+
+        var handleBlur = (e) => {
+          setInputValue(e.target.value.toUpperCase());
+        };
+
+        return (
+          <div>
+            <input type="text" id="t1" onBlur={handleBlur} />
+            <h1 id="dd">{inputValue}</h1>
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("d3"));
+    </script>
+  </body>
+</html>

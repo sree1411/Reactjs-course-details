@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dd{
+            display: none;
+        }
+        #dd.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>  
+
+    <!-- // in this code we create mutlple line and aa line ki diff diff colors add chesam
+    // click cheste block and none ayedi chesam along with the change color -->
+      <h1> Lorem ipsum dolor sit amet.</h1>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+      <h1> Lorem ipsum dolor sit amet.</h1>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+      <h1> Lorem ipsum dolor sit amet.</h1>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+      <h1> Lorem ipsum dolor sit amet.</h1>
+      <p id="pp">Lorem ipsum dolor sit, amet consectetur adipisicing.
+  
+          <div id="dd">
+           inside the last p tag elment
+          </div>
+
+      </p>
+      <script>
+        let ele  = document.querySelectorAll('p')
+         ele.forEach((ptag, i)=>{
+            if(i%2 ===0){
+                ptag.style.color ="blue"
+            }else{
+                ptag.style.color ="red"
+            }
+         })
+
+         let ele1 = document.querySelector('#pp')
+         ele1.addEventListener('click', (eve)=>{
+            let ele3 = eve.target.style.color ="yellow"
+            let ele2 = document.getElementById('dd')
+            ele2.classList.toggle('active')
+            ele2.append(ele3)
+            console.dir(eve);
+            console.dir(ele2);
+
+         })
+
+      </script>
+</body>
+
+    
+</html>
